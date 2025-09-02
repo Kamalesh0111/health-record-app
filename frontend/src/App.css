@@ -1,0 +1,243 @@
+/* --- Global Styles --- */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #a7c9eb; /* A lighter, more professional background */
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.App {
+    width: 100%;
+}
+
+/* --- Login Page Styles --- */
+.login-container {
+    max-width: 450px;
+    margin: auto;
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+h1 {
+    color: #1a73e8;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.login-container h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+/* --- Login Toggle Switch Styles --- */
+.login-toggle {
+    display: flex;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.toggle-btn {
+    flex: 1; /* Each button takes up half the space */
+    padding: 0.75rem;
+    border: none;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.toggle-btn:first-of-type {
+    border-right: 1px solid #dee2e6;
+}
+
+/* Style for the active button */
+.toggle-btn.active {
+    background-color: #1a73e8;
+    color: white;
+}
+
+/* --- Form Styles --- */
+.login-container form, .patient-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-container input, .patient-form input, .patient-form textarea {
+    background-color: #f1f3f5;
+    color: #212529;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-container input:focus, .patient-form input:focus, .patient-form textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+}
+
+.patient-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* --- Button Styles --- */
+button[type="submit"] {
+    background-color: #1a73e8;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+}
+button[type="submit"]:hover {
+    background-color: #185abc;
+}
+
+.secondary-action {
+    background: none;
+    border: none;
+    color: #1a73e8;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin: -1rem 0 1rem 0;
+    text-align: center;
+}
+
+.feedback-message {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border: 1px solid #badbcc;
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* --- Logged-In View Styles --- */
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.logout-button:hover {
+    background-color: #5a6268;
+}
+
+/* --- Admin Panel Styles --- */
+.patient-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+}
+
+.patient-card {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.patient-info p {
+    margin: 0.25rem 0;
+}
+.patient-actions {
+    margin-left: auto;
+}
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* --- Patient Panel Styles --- */
+.patient-form {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    .login-container {
+        padding: 1.5rem;
+    }
+    .logout-button {
+        position: static;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .patient-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .patient-actions {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .delete-button {
+        width: 100%;
+    }
+}
